@@ -1,0 +1,25 @@
+<form method="GET" action="{% url 'buscar_productos' %}">
+    <input type="text" name="q" placeholder="Buscar producto..." value="{{ query }}">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if productos %}
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+        </tr>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td>{{ producto.cantidad }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No se encontraron productos.</p>
+{% endif %}
