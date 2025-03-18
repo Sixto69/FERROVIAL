@@ -16,7 +16,7 @@
         <h1>Productos en Bodega</h1>
 
         <table class="table table-bordered border-primary">
-            <thead>
+            <thead class="table-dark">
                 <tr>
                     <th>Producto</th>
                     <th>Cantidad</th>
@@ -30,8 +30,8 @@
                             <td>{{ producto.nombre }}</td>
                             <td>{{ producto.cantidad }}</td>
                             <td>
-                                <a class="btn btn-primary" href="{% url 'editar_producto' producto.pk %}" role="button">Editar</a>
-                                <a class="btn btn-primary" href="{% url 'eliminar_producto' producto.pk %}" role="button">Eliminar</a>
+                                <a class="btn btn-warning" href="{% url 'editar_producto' producto.pk %}" role="button">Editar</a>
+                                <a class="btn btn-danger" href="{% url 'eliminar_producto' producto.pk %}" role="button">Eliminar</a>
                             </td>
                         </tr>
                     {% endfor %}
