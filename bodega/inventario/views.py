@@ -33,9 +33,5 @@ def eliminar_producto(request, pk):
     producto.delete()
     return redirect('lista_productos')
 
-def buscar_productos(request):
-    query = request.GET.get('q')  # Obtiene el valor de búsqueda desde el formulario
-    productos = Producto.objects.filter(nombre__icontains=query) if query else Producto.objects.all()
-    return render(request, 'buscar_productos.html', {'productos': productos, 'query': query})
 
 # Create your views here.
