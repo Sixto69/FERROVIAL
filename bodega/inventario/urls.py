@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import lista_productos, agregar_producto, editar_producto, eliminar_producto, buscar_productos  # Importar la vista desde views.py
+from .views import lista_productos, agregar_producto, editar_producto, eliminar_producto  # Importar la vista desde views.py
 urlpatterns = [
     path('', views.lista_productos, name='lista_productos'),
     path('agregar/', views.agregar_producto, name='agregar_producto'),
